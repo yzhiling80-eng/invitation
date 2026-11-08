@@ -23,8 +23,7 @@ const paper=root.querySelector('.insert');
 let busy=false, running=[];
 article.hidden=false;article.inert=true;article.setAttribute('aria-hidden','true');
 // Reuse the real letterhead inside the extracted sheet.
-const fund=article.querySelector('.fund-logo').cloneNode(true);
-paper.replaceChildren(fund);
+paper.replaceChildren();
 const label=document.createElement('div');label.className='paper-label';label.textContent='邀请函';paper.append(label);
 const english=document.createElement('small');english.textContent='INVITATION';paper.append(english);
 root.querySelectorAll('img').forEach(img=>{if(img.decode)img.decode().catch(()=>{});});
@@ -160,4 +159,4 @@ replay.addEventListener('click',()=>{
 #black-invite.reading article{transition:none;animation:none}
 #black-invite.reading{min-height:100svh}
 @supports(height:100dvh){#black-invite{--opening-height:100dvh}}
-</style></body></html>
+</style><style>#black-invite .insert{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px}#black-invite .paper-label{margin:0;text-indent:10px;line-height:1.5;font-size:30px}#black-invite .insert>small{font-size:11px;letter-spacing:4px;text-indent:4px}</style></body></html>
